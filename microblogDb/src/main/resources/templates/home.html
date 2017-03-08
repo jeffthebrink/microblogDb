@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body bgcolor="#00bfff">
+
+
+<h2>Welcome to the Microblog Database!</h2>
+
+<form action="/add-message" method="post">
+    <input type="text" placeholder="Enter your message" name="text"/>
+    <button type="submit">Submit</button>
+</form>
+<hr>
+<h3>Messages:</h3>
+
+{{^messages}}
+No messages yet...
+{{/messages}}
+
+{{#messages}}
+
+<form action="/edit?id={{id}}" method="get">{{id}}. {{text}}<input type="hidden" value="{{id}}" name="id">
+    <button type="submit">Edit</button>
+</form>
+<br>
+
+{{/messages}}
+
+</body>
+</html>

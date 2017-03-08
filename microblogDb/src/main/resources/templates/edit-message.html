@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Message</title>
+</head>
+<body bgcolor="#00bfff">
+
+<h2>Edit a message: </h2>
+
+<h4>Original Entry:</h4>
+
+{{#messages}}
+{{text}}
+
+<hr>
+<h4>New Entry:</h4>
+
+<form action="/edit-message?id={{id}}" method="post">
+    <input type="text" placeholder="New message" name="text"/>
+
+    <button type="submit">Submit</button>
+</form>
+{{/messages}}
+</body>
+</html>
